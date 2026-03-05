@@ -706,8 +706,8 @@ export default function CTReact() {
   const pollRef  = useRef(null);
   const timerRef = useRef(null);
 
-  const canScan = true; // server handles all auth — always ready once signed in
-
+const canScanReady = true;
+  
   /* ── Discover GSC & GA4 via service account ─────────────────────────────*/
   async function discover() {
     setDiscBusy(true); setDiscErr(""); setGscSites([]); setGa4Props([]);
