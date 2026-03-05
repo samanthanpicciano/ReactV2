@@ -658,6 +658,9 @@ export default function CTReact() {
   const [discBusy,  setDiscBusy]  = useState(false);
   const [discErr,   setDiscErr]   = useState("");
 
+  // Client → property mapping (client name -> { gscSite, ga4Id })
+const [mappings, setMappings] = useState({});
+
   const canScan = true; // server handles auth — always ready once signed in
 
   /* team leads — derived from signed-in user */
@@ -706,8 +709,7 @@ export default function CTReact() {
   const pollRef  = useRef(null);
   const timerRef = useRef(null);
 
-const canScanReady = true;
-  
+
   /* ── Discover GSC & GA4 via service account ─────────────────────────────*/
   async function discover() {
     setDiscBusy(true); setDiscErr(""); setGscSites([]); setGa4Props([]);
